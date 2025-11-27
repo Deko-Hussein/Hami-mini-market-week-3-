@@ -1,11 +1,5 @@
 // product.js
-// Handles product data reading from DOM and filtering/rendering logic
-
 let productsCache = [];
-
-/**
- * Reads product information from existing .product-card elements.
- */
 function readProductsFromDOM() {
   const cards = document.querySelectorAll(".product-card");
   productsCache = [];
@@ -51,10 +45,6 @@ export function initProducts(onAddToCart) {
   });
 }
 
-/**
- * Filters products by search term, category, and max price.
- * Controls visibility of product cards.
- */
 export function filterProducts(searchTerm, category, maxPrice) {
   const term = (searchTerm || "").toLowerCase();
   const cat = category || "all";
@@ -74,9 +64,7 @@ export function filterProducts(searchTerm, category, maxPrice) {
   });
 }
 
-/**
- * Returns a simplified array of products (without DOM elements).
- */
+
 export function getProducts() {
   return productsCache.map(({ cardElement, buttonElement, ...rest }) => rest);
 }
