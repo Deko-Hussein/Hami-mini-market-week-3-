@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hami MiniMarket</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="./hami.png" alt="" />
+          <h1>Hami MiniMarket</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="search-bar">
+          <input type="text" placeholder="Search products..." />
+          <button type="submit">Search</button>
+        </div>
+        <div class="cart-container">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount">0</span>
+          <div class="cart-dropdown" id="cartDropdown">
+            <!-- Cart items + totals rendered by JS -->
+          </div>
+        </div>
+        <div class="menu"><i class="fas fa-bars"></i></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <h1>Welcome to Hami MiniMarket</h1>
+          <p>Your one-stop shop for all your daily needs!</p>
+          <a href="#products" class="btn">Shop Now</a>
+        </div>
+      </section>
+      <div id="toast" class="toast"></div>
+
+      <section id="products" class="products">
+        <div class="product-container">
+          <h2>Our Products</h2>
+          <div class="product-filters">
+            <input type="text" id="searchInput" placeholder="Search products..."/>
+            <select id="categoryFilter">
+              <option value="all">All Categories</option>
+              <option value="fruits">Fruits</option>
+              <option value="vegetables">Vegetables</option>
+            </select>
+            <input type="range" id="priceFilter" min="0" max="5" value="5" step="0.1"/>
+            <span id="priceValue">$5</span>
+          </div>
+
+          <div class="product-grid">
+           <div class="product-card"data-id="2"data-name="Fresh Apples"data-category="fruits"data-price="1.49">
+              <img src="https://images.pexels.com/photos/10256309/pexels-photo-10256309.jpeg"/>
+              <h3>Fresh Apples</h3>
+              <p>$2.99 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+            <div class="product-card"data-id="2"data-name="Avacado"data-category="fruits"data-price="1.49">
+              <img src="https://images.pexels.com/photos/30972854/pexels-photo-30972854.jpeg"/>
+              <h3>Avacado</h3>
+              <p>$1.49 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+            <div class="product-card"data-id="2"data-name="Bananas"data-category="fruits"data-price="1.49">
+              <img src="https://i.pinimg.com/736x/09/0b/9f/090b9f1b4757a5b6fcfc673df71cd3b9.jpg"/>
+              <h3>Bananas</h3>
+              <p>$1.49 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card" data-id="3" data-name="Fresh Carrots" data-category="vegetables" data-price="1.99">
+              <img src="https://i.pinimg.com/736x/96/96/3d/96963d4b09020cc8a8a728e2fdeb037a.jpg"/>
+              <h3>Fresh Carrots</h3>
+              <p>$1.99 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+            <div class="product-card" data-id="3" data-name="Fresh eggplant" data-category="vegetables" data-price="1.99">
+              <img src="https://i.pinimg.com/736x/54/33/66/543366494797704a95ad1877ef765f17.jpg"/>
+              <h3>Fresh eggplant</h3>
+              <p>$2 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card" data-id="4" data-name="Fresh Tomato" data-category="vegetables" data-price="2.49">
+              <img src="https://i.pinimg.com/736x/22/76/3e/22763e8c0969b1fb712e59bb63743129.jpg"/>
+              <h3>Fresh Tomato</h3>
+              <p>$2.49 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card" data-id="5" data-name="Fresh Grapes" data-category="fruits" data-price="2.99">
+              <img src="https://i.pinimg.com/1200x/cd/4b/b7/cd4bb7f345b147e47c4581a486076d40.jpg"/>
+              <h3>Fresh Grapes</h3>
+              <p>$2.99 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card" data-id="6" data-name="Fresh Oranges" data-category="fruits" data-price="2.5">
+              <img src="https://i.pinimg.com/736x/19/03/18/1903181a3bad2262cbbcc0e41585c83a.jpg"/>
+              <h3>Fresh Oranges</h3>
+              <p>$2.50 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card" data-id="7" data-name="Fresh Lettuce" data-category="vegetables" data-price="1.79">
+              <img src="https://i.pinimg.com/1200x/b1/2a/53/b12a532fa575f03b3be647bdf5ae0192.jpg"/>
+              <h3>Fresh Lettuce</h3>
+              <p>$1.79 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+
+            <div class="product-card" data-id="8" data-name="Fresh Pineapple" data-category="fruits" data-price="3.99">
+              <img src="https://i.pinimg.com/736x/ef/ff/f3/effff394dd69b8c1f39cd8ef01fb5ca2.jpg"/>
+              <h3>Fresh Pineapple</h3>
+              <p>$3.99 / lb</p>
+              <button class="btn add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-us">
+        <div class="container">
+          <div class="about-content">
+            <h2>About Us</h2>
+            <p>
+              Hami MiniMarket has been serving the community since 1995. We are
+              committed to providing high-quality products at affordable prices.
+              Our mission is to make shopping convenient and enjoyable for our
+              customers. We source our products from trusted suppliers to ensure
+              freshness and quality. Our friendly staff is always ready to
+              assist you with your shopping needs. Thank you for choosing Hami
+              MiniMarket! We look forward to serving you! Visit us today and
+              experience the Hami MiniMarket difference!
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://i.pinimg.com/736x/6d/ac/f8/6dacf825f6690cf4240f143e9715f584.jpg"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact-us">
+        <form>
+          <h2>Contact Us</h2>
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h3>Hami MiniMarket</h3>
+          <p>
+            Providing fresh fruits and vegetables since 1995. Visit us for
+            quality products and friendly service!
+          </p>
+        </div>
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-phone"></i> +252 61 123 4567</p>
+          <p><i class="fas fa-envelope"></i> info@hamimarket.com</p>
+          <div class="socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hami MiniMarket | Designed by Deko Hussein Said</p>
+        <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+      </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

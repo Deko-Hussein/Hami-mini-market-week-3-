@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Summary - Hami MiniMarket</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+
+  <body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="./hami.png" alt="logo" />
+          <h1>Hami MiniMarket</h1>
+        </div>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="cart-container">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount">0</span>
+          <div class="cart-dropdown" id="cartDropdown"></div>
+        </div>
+
+        <div class="menu"><i class="fas fa-bars"></i></div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+      <section class="order-summary-section">
+        <h1>Order Summary</h1>
+
+        <div id="order-items" class="order-items"></div>
+
+        <div class="order-totals">
+          <div class="cart-row">
+            <span>Subtotal:</span>
+            <span id="order-subtotal">$0.00</span>
+          </div>
+          <div class="cart-row">
+            <span>Tax (5%):</span>
+            <span id="order-tax">$0.00</span>
+          </div>
+          <div class="cart-row">
+            <span>Discount (10% > $50):</span>
+            <span id="order-discount">$0.00</span>
+          </div>
+          <div class="cart-row cart-total-row">
+            <span>Final Total:</span>
+            <span id="order-total">$0.00</span>
+          </div>
+        </div>
+
+        <button id="confirm-order-btn" class="btn-primary">Confirm Order</button>
+        <p id="confirm-message" class="confirm-message"></p>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h3>Hami MiniMarket</h3>
+          <p>
+            Providing fresh fruits and vegetables since 1995. Visit us for quality
+            products and friendly service!
+          </p>
+        </div>
+
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-phone"></i> +252 61 123 4567</p>
+          <p><i class="fas fa-envelope"></i> info@hamimarket.com</p>
+          <div class="socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Hami MiniMarket | Designed by Deko Hussein Said</p>
+        <a href="index.html#home" class="back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script type="module">
+      // Hide cart dropdown on order page
+      document.getElementById("cartDropdown").style.display = "none";
+    </script>
+
+    <script type="module" src="./order.js"></script>
+  </body>
+</html>
