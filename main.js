@@ -1,5 +1,4 @@
 // main.js
-// Entry for index.html
 
 import { initProducts, filterProducts } from "./product.js";
 import { Cart } from "./cart.js";
@@ -186,5 +185,5 @@ function handleAddToCart(product) {
 
 // Init products module & filters
 initProducts(handleAddToCart);
-applyFilters(); // initial filter (shows all)
-renderCartDropdown(cart); // initial cart render (load from storage)
+applyFilters(); 
+renderCartDropdown(cart); 
