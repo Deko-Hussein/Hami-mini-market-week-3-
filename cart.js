@@ -1,15 +1,14 @@
 // cart.js
-// Core cart logic (no DOM)
 
 import { saveCart, loadCart } from "./storage.js";
 
-const TAX_RATE = 0.05; // 5% tax
+const TAX_RATE = 0.05; 
 const DISCOUNT_THRESHOLD = 50;
-const DISCOUNT_RATE = 0.1; // 10% off
+const DISCOUNT_RATE = 0.1; 
 
 export class Cart {
   constructor() {
-    this.items = loadCart(); // [{id, name, price, quantity, image}]
+    this.items = loadCart(); 
     this.listeners = [];
   }
 
